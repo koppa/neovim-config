@@ -1,26 +1,27 @@
 "disable powerline, because installed in system
 let g:powerline_loaded = 1	
 
-
 "PlugInstall
 	"PlugUpdate -> update plugins
 	"PlugUpgrae -> Update plug
 
 call plug#begin('~/.vim/plugged')
-	Plug 'vim-airline/vim-airline'
-	Plug 'scrooloose/nerdtree'
 	Plug 'neomake/neomake'
-    Plug 'chriskempson/base16-vim'
-    Plug 'tpope/vim-fugitive'
+	Plug 'scrooloose/nerdtree'
+    Plug 'itchyny/lightline.vim'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-jedi'
+    Plug 'chriskempson/base16-vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-fugitive'
+    Plug 'zchee/deoplete-jedi'
 call plug#end()
 
-set expandtab           " Insert spaces when TAB is pressed.
-set tabstop=4           " Render TABs using this many spaces.
-set shiftwidth=4        " Indentation amount for < and > commands.
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 colorscheme default
 " default theme for terminal
@@ -52,6 +53,7 @@ nnoremap <silent> <C-b> :wa<CR> :Neomake<CR>
 " real colors
 set termguicolors
 
+" https://github.com/junegunn/fzf#respecting-gitignore
 let $FZF_DEFAULT_COMMAND='ag -g ""'
 nnoremap <silent> <C-p> :<C-u>Files <CR>
 nnoremap <silent> <C-o> :<C-u>Buffers <CR>
