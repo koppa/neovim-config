@@ -16,12 +16,18 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-eunuch'
     Plug 'tpope/vim-fugitive'
     Plug 'zchee/deoplete-jedi'
+    Plug 'w0rp/ale'
+
+    Plug 'Shougo/neosnippet.vim'
+    Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
+set hidden " allow to switch unsaved buffers
 
 colorscheme default
 " default theme for terminal
@@ -30,6 +36,7 @@ if exists('g:GuiLoaded')
     GuiFont PragmataPro:h11
 endif
 
+set nu
 set colorcolumn=80
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
@@ -59,3 +66,11 @@ nnoremap <silent> <C-p> :<C-u>Files <CR>
 nnoremap <silent> <C-o> :<C-u>Buffers <CR>
 nnoremap <silent> <C-i> :<C-u>Ag <CR>
 nnoremap <silent> <char-252> :<C-u>Tags <CR>
+
+" double escape, clear highlights
+nnoremap <silent> <Esc><Esc> :nohl<CR>
+
+" Snippet expansion on C-k
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
