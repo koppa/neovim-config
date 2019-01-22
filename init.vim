@@ -24,6 +24,7 @@ set shiftwidth=4        " Indentation amount for < and > commands.
 
 colorscheme default
 " default theme for terminal
+"
 if exists('g:GuiLoaded')
     colorscheme desert
     GuiFont PragmataPro:h11
@@ -57,3 +58,7 @@ nnoremap <silent> <C-p> :<C-u>Files <CR>
 nnoremap <silent> <C-o> :<C-u>Buffers <CR>
 nnoremap <silent> <C-i> :<C-u>Ag <CR>
 nnoremap <silent> <char-252> :<C-u>Tags <CR>
+
+if hostname() == "markus-desktop"
+    colorscheme base16-ocean
+endif
