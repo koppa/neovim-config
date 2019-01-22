@@ -31,6 +31,7 @@ set hidden " allow to switch unsaved buffers
 
 colorscheme default
 " default theme for terminal
+"
 if exists('g:GuiLoaded')
     colorscheme desert
     GuiFont PragmataPro:h11
@@ -74,3 +75,9 @@ nnoremap <silent> <Esc><Esc> :nohl<CR>
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+
+" host dependent config
+if hostname() == "markus-desktop"
+    colorscheme base16-ocean
+endif
