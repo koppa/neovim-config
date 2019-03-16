@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/neosnippet.vim'
     Plug 'Shougo/neosnippet-snippets'
 
-    Plug 'google/codefmt'
+    Plug 'google/vim-codefmt'
 call plug#end()
 
 set expandtab
@@ -32,8 +32,16 @@ set softtabstop=4
 set hidden " allow to switch unsaved buffers
 
 colorscheme default
-" default theme for terminal
-"
+
+" host dependent config
+if hostname() == "markus-desktop"
+    colorscheme base16-ocean
+endif
+
+if hostname() == "localhost"
+    colorscheme base16-solarized-light
+endif
+
 if exists('g:GuiLoaded')
     colorscheme desert
     GuiFont PragmataPro:h11
@@ -79,7 +87,3 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 
-" host dependent config
-if hostname() == "markus-desktop"
-    colorscheme base16-ocean
-endif
