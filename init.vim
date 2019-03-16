@@ -20,6 +20,8 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'Shougo/neosnippet.vim'
     Plug 'Shougo/neosnippet-snippets'
+
+    Plug 'google/codefmt'
 call plug#end()
 
 set expandtab
