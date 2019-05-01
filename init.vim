@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/neosnippet.vim'
     Plug 'Shougo/neosnippet-snippets'
 
+    Plug 'google/vim-maktaba'
     Plug 'google/vim-codefmt'
 call plug#end()
 
