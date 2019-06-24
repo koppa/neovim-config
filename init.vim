@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'google/vim-maktaba'
     Plug 'google/vim-codefmt'
+    Plug 'google/vim-maktaba'
 call plug#end()
 
 set expandtab
@@ -43,7 +44,7 @@ if hostname() == "markus-desktop"
 endif
 
 if hostname() == "localhost"
-    colorscheme base16-solarized-light
+    colorscheme base16-atelier-cave-light
 endif
 
 if exists('g:GuiLoaded')
