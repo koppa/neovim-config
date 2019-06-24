@@ -32,9 +32,12 @@ set softtabstop=4
 
 set hidden " allow to switch unsaved buffers
 
-colorscheme default
 
 " host dependent config
+if hostname() == "enzo"
+    colorscheme base16-eighties
+endif
+
 if hostname() == "markus-desktop"
     colorscheme base16-ocean
 endif
