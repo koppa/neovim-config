@@ -5,7 +5,7 @@ let g:powerline_loaded = 1
 	"PlugUpdate -> update plugins
 	"PlugUpgrae -> Update plug
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 	Plug 'neomake/neomake'
 	Plug 'scrooloose/nerdtree'
     Plug 'itchyny/lightline.vim'
@@ -33,7 +33,6 @@ set softtabstop=4
 
 set hidden " allow to switch unsaved buffers
 
-
 " host dependent config
 if hostname() == "enzo"
     colorscheme base16-eighties
@@ -54,11 +53,14 @@ endif
 
 set nu
 set colorcolumn=80
-hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+" hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " save on :make command
 set autowrite
 set mouse=a
+" real colors
+set termguicolors
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configuration
@@ -72,9 +74,6 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " asynchronous mage on Strg+B
 nnoremap <silent> <C-b> :wa<CR> :Neomake<CR>
-
-" real colors
-set termguicolors
 
 " https://github.com/junegunn/fzf#respecting-gitignore
 let $FZF_DEFAULT_COMMAND='ag -g ""'
@@ -90,5 +89,3 @@ nnoremap <silent> <Esc><Esc> :nohl<CR>
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-
