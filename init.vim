@@ -9,14 +9,15 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'neomake/neomake'
 	Plug 'scrooloose/nerdtree'
     Plug 'itchyny/lightline.vim'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'chriskempson/base16-vim'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " completition
+    Plug 'chriskempson/base16-vim' " colorscheme
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-eunuch' " unix helpers
     Plug 'tpope/vim-fugitive'
     Plug 'zchee/deoplete-jedi'
-    Plug 'w0rp/ale'
+    Plug 'dense-analysis/ale' " syntax checker
+    Plug 'chrisbra/Recover.vim'
 
     Plug 'Shougo/neosnippet.vim'
     Plug 'Shougo/neosnippet-snippets'
@@ -35,7 +36,7 @@ set hidden " allow to switch unsaved buffers
 
 " host dependent config
 if hostname() == "enzo"
-    colorscheme base16-eighties
+    colorscheme base16-monokai
 endif
 
 if hostname() == "markus-desktop"
@@ -89,3 +90,9 @@ nnoremap <silent> <Esc><Esc> :nohl<CR>
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+noremap <silent> <F12> :FormatCode<CR>:w<CR>
+imap <F12>   <ESC>:FormatCode<CR>:w<CR>
+smap <F12>   <ESC>:FormatCode<CR>:w<CR>
+xmap <F12>   <ESC>:FormatCode<CR>:w<CR>
+
